@@ -5,11 +5,32 @@ body {
 /* Hero Section */
 
 #Hero-Section {
-  background-image: url("../img/bg-hero.jpg");
-  background-repeat: no-repeat;
+  position: relative;
+  background-image: url('../imgs/tu-imagen.jpg'); /* ajusta la ruta */
   background-size: cover;
-  background-position: left;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  z-index: 0;
+  overflow: hidden;
+  font-weight: 600;
 }
+
+#Hero-Section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* oscurece la imagen */
+  z-index: 1;
+}
+
+#Hero-Section > * {
+  position: relative;
+  z-index: 2; /* asegura que el contenido esté sobre el overlay */
+}
+
 
 /* Mis trabajos */
 
